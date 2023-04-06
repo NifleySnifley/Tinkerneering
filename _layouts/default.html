@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+{%- include head.html -%}
+{%- include background.html -%}
+
+<body style="z-index:3" class="content-container">
+  {%- include header.html -%}
+
+  <main style="z-index: 4" class="page-content" aria-label="Content">
+    <div class="wrapper">
+      {{ content }}
+    </div>
+  </main>
+
+  {%- include footer.html -%}
+</body>
+
+</html>

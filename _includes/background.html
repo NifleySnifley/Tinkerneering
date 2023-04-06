@@ -1,0 +1,456 @@
+<canvas width="100%" height="100%" style="margin: 0; padding: 0; position: fixed; z-index: 0; left:0; top:0;"
+    id="backgroundcanvas"></canvas>
+<div class="center_bg"></div>
+<script type="glsl" id="backgroundfrag">
+precision mediump float;
+uniform vec3 offset;
+uniform float ox;
+uniform vec2 size;
+uniform float time;
+uniform float preview;
+const float lacunarity = 1.0;
+const float freq = 5.0;
+const float waterLevel = 0.4;
+
+
+const vec3 deepocean = vec3(56.9, 78.4, 88.2) / 100.0;
+const vec3 deepdeepocean = vec3(73.0, 100.0, 158.0) / 255.0;
+const vec3 lightocean = vec3(61.2, 83.1, 88.6) / 100.0;
+const vec3 grass = vec3(54.1, 71.0, 28.6) / 100.0;
+const vec3 drygrass = vec3(165.0, 181.0, 72.0) / 255.0;
+const vec3 sand = vec3(98.8, 88.2, 61.2) / 100.0;
+const vec3 mountainBase = vec3(29.0) / 100.0;
+const vec3 mountainTop = vec3(52.2) / 100.0;
+const vec3 snowcap = vec3(86.3) / 100.0;
+const vec3 tree = vec3(13.7, 31.0, 4.3) / 80.0;
+
+
+//	Classic Perlin 3D Noise 
+//	by Stefan Gustavson
+vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
+vec3 fade(vec3 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
+float cnoise(vec3 P){
+  vec3 Pi0 = floor(P); // Integer part for indexing
+  vec3 Pi1 = Pi0 + vec3(1.0); // Integer part + 1
+  Pi0 = mod(Pi0, 289.0);
+  Pi1 = mod(Pi1, 289.0);
+  vec3 Pf0 = fract(P); // Fractional part for interpolation
+  vec3 Pf1 = Pf0 - vec3(1.0); // Fractional part - 1.0
+  vec4 ix = vec4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
+  vec4 iy = vec4(Pi0.yy, Pi1.yy);
+  vec4 iz0 = Pi0.zzzz;
+  vec4 iz1 = Pi1.zzzz;
+
+  vec4 ixy = permute(permute(ix) + iy);
+  vec4 ixy0 = permute(ixy + iz0);
+  vec4 ixy1 = permute(ixy + iz1);
+
+  vec4 gx0 = ixy0 / 7.0;
+  vec4 gy0 = fract(floor(gx0) / 7.0) - 0.5;
+  gx0 = fract(gx0);
+  vec4 gz0 = vec4(0.5) - abs(gx0) - abs(gy0);
+  vec4 sz0 = step(gz0, vec4(0.0));
+  gx0 -= sz0 * (step(0.0, gx0) - 0.5);
+  gy0 -= sz0 * (step(0.0, gy0) - 0.5);
+
+  vec4 gx1 = ixy1 / 7.0;
+  vec4 gy1 = fract(floor(gx1) / 7.0) - 0.5;
+  gx1 = fract(gx1);
+  vec4 gz1 = vec4(0.5) - abs(gx1) - abs(gy1);
+  vec4 sz1 = step(gz1, vec4(0.0));
+  gx1 -= sz1 * (step(0.0, gx1) - 0.5);
+  gy1 -= sz1 * (step(0.0, gy1) - 0.5);
+
+  vec3 g000 = vec3(gx0.x,gy0.x,gz0.x);
+  vec3 g100 = vec3(gx0.y,gy0.y,gz0.y);
+  vec3 g010 = vec3(gx0.z,gy0.z,gz0.z);
+  vec3 g110 = vec3(gx0.w,gy0.w,gz0.w);
+  vec3 g001 = vec3(gx1.x,gy1.x,gz1.x);
+  vec3 g101 = vec3(gx1.y,gy1.y,gz1.y);
+  vec3 g011 = vec3(gx1.z,gy1.z,gz1.z);
+  vec3 g111 = vec3(gx1.w,gy1.w,gz1.w);
+
+  vec4 norm0 = taylorInvSqrt(vec4(dot(g000, g000), dot(g010, g010), dot(g100, g100), dot(g110, g110)));
+  g000 *= norm0.x;
+  g010 *= norm0.y;
+  g100 *= norm0.z;
+  g110 *= norm0.w;
+  vec4 norm1 = taylorInvSqrt(vec4(dot(g001, g001), dot(g011, g011), dot(g101, g101), dot(g111, g111)));
+  g001 *= norm1.x;
+  g011 *= norm1.y;
+  g101 *= norm1.z;
+  g111 *= norm1.w;
+
+  float n000 = dot(g000, Pf0);
+  float n100 = dot(g100, vec3(Pf1.x, Pf0.yz));
+  float n010 = dot(g010, vec3(Pf0.x, Pf1.y, Pf0.z));
+  float n110 = dot(g110, vec3(Pf1.xy, Pf0.z));
+  float n001 = dot(g001, vec3(Pf0.xy, Pf1.z));
+  float n101 = dot(g101, vec3(Pf1.x, Pf0.y, Pf1.z));
+  float n011 = dot(g011, vec3(Pf0.x, Pf1.yz));
+  float n111 = dot(g111, Pf1);
+
+  vec3 fade_xyz = fade(Pf0);
+  vec4 n_z = mix(vec4(n000, n100, n010, n110), vec4(n001, n101, n011, n111), fade_xyz.z);
+  vec2 n_yz = mix(n_z.xy, n_z.zw, fade_xyz.y);
+  float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x); 
+  return 2.2 * n_xyz;
+}
+
+// The MIT License
+// Copyright © 2018 Inigo Quilez
+// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// Distance to a regular octogon, without trigonometric functions. 
+// List of other 2D distances: https://www.shadertoy.com/playlist/MXdSRf
+// and www.iquilezles.org/www/articles/distfunctions2d/distfunctions2d.htm
+float sdHexagon( in vec2 p, in float r ) {
+    return length(p) - r;
+}
+
+// Generic GLSL random hash with sin
+float rand(vec2 co){
+    return fract(sin(dot(mod(co, 1234.56789), vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+vec2 rand2(vec2 co) {
+    return fract(sin(
+        vec2(dot(co, vec2(12.9898, 78.233)),dot(co, vec2(123.9898, 78.233)))
+    ) * 43758.5453);
+}
+
+
+float remap(in float val, in float minimum, in float maximum, in float low, in float high) {
+    return low + (val - minimum) * (high - low) / (maximum - minimum);
+}
+
+float cdistfunc(in vec2 a, in vec2 b) { return distance(a, b); }//return max(abs(a.x-b.x), abs(a.y-b.y)); }
+// float cdistfunc(in vec2 a, in vec2 b) {
+//     return sdHexagon(b-a, 0.15) + 0.15;
+// }
+float cellular(vec2 p) {
+    float d = 1000000000.0;
+
+    for (int x = -1; x <= 1; ++x) {
+        for (int y = -1; y <= 1; ++y) {
+            vec2 tc = floor(p) + vec2(x,y);
+            tc += rand2(tc);
+            d = min(d, cdistfunc(p, tc));
+        }
+    }
+
+    return d;
+}
+
+#define octaves 6
+float fnoise(vec3 p, float lacun) {
+    float G = exp2(-lacun);
+    float f = 1.0;
+    float a = 1.0;
+    float s = 0.0;
+    
+    for (int i = 0; i < octaves; ++i) {
+        s += a * cnoise(p * f); // Noise * amplitude
+        f *= 2.0; // Mult frequency
+        a *= G;
+    }
+
+    return s;
+}
+
+float noiseFunc(in vec2 UV, in float z) {
+    return (
+        (fnoise(vec3(UV * freq, z), lacunarity) + 1.0) * 0.54 +
+        cnoise(vec3(UV * (freq/3.0), z)) +
+        cnoise(vec3(UV * (freq/10.0), z))
+    )* 0.48;
+}
+
+float grid(vec2 p) {
+    vec2 tc = floor(p) + 0.5;
+    return 2.0 * max(abs(tc.x-p.x), abs(tc.y-p.y));
+}
+
+vec3 normal(vec2 WC, float z, float eps) {
+    /*// Normal stuff
+    float up = noiseFunc(WC + vec2(0.0, eps), z);
+    float here = noiseFunc(WC, z);
+    float right = noiseFunc(WC + vec2(eps, 0.0), z);
+    vec2 d = vec2(
+        right - here,
+        up - here
+    ) / (eps*4.0);
+    vec3 n = normalize(vec3(0.5*d, 0.5));
+    // n += vec3(1.0);
+    // n *= 0.5;*/
+    return vec3(0.0);//n;
+}
+
+const float SCALE = 800.0;
+void main() {
+    vec2 UV = gl_FragCoord.xy / SCALE;
+    vec2 WC = UV;
+    WC += (offset.xy + vec2(ox, 0.0));
+    float z = offset.z;
+    
+    float noise_fac = noiseFunc(WC, z);
+    float humidity = (
+        fnoise(vec3(WC*freq*0.5+vec2(123.456), z*2.0), 1.0)// + cnoise(vec3(WC*freq*+vec2(1234.56), z*2.0))
+    ) * 0.5;
+    float drought_mask = (//cnoise(vec3(WC * freq * 0.5 + vec2(567.89), z));
+        cnoise(vec3(WC * freq * 0.5 + vec2(567.89), z)) + 
+        cnoise(vec3(WC * freq * 1.5 + vec2(567.89), z))*0.5
+    ) * 0.75;
+
+    float eps = 0.01;
+
+    vec3 col = deepocean;
+
+    float mountainLine = max(0.8, waterLevel + 0.3);
+
+    // Tree noise generation
+    float tree_mask = smoothstep(waterLevel + 0.04, waterLevel+0.11, noise_fac);
+    tree_mask = min(tree_mask, smoothstep(mountainLine+0.10, mountainLine-0.05, noise_fac));
+    float land_mask = tree_mask;
+    tree_mask = min(tree_mask, 
+        smoothstep(0.0, 0.1, humidity)
+    );
+    //tree_mask = min(tree_mask, smoothstep(0.3, 0.4, (cnoise(vec3(WC*freq+vec2(10000.0), z)) + 1.0) * 0.5));
+    float treenoise = 1000000000.0;
+    float cfreq = 30.0;
+    for (int x = -1; x <= 1; ++x) {
+        for (int y = -1; y <= 1; ++y) {
+            vec2 tc = floor(WC * freq * cfreq) + vec2(x,y);
+            float tc_rand = rand(tc);
+            tc += rand2(tc);
+            treenoise = min(treenoise, 
+                cdistfunc(WC * freq * cfreq, tc) + (1.0 - 
+                    ((tc_rand > 0.9 && land_mask > 0.9 && drought_mask > 0.0) ? 1.0 : tree_mask+0.1)
+                )
+            );
+        }
+    }
+    // float treenoise = d;//max(cellular(WC * freq * 30.0), (1.0-tree_mask));
+
+    // Deep water shading
+    col = mix(
+        col,
+        deepdeepocean,
+        smoothstep(waterLevel, -1.0, noise_fac) * 0.5
+    );
+    // Shallows
+    if (noise_fac >= waterLevel - 0.05) col = lightocean;
+    
+    // Beach
+    if (noise_fac >= waterLevel) col = sand;
+    // Plains
+    if (noise_fac >= waterLevel + 0.06) col = mix(
+        grass,
+        drygrass,
+        smoothstep(0.1, -0.3, drought_mask) * 0.75
+    );
+
+    // Plains-to-mountains transition
+    if (noise_fac >= mountainLine - 0.04) col = mix(
+        col,
+        mountainBase,
+        smoothstep(mountainLine - 0.04, mountainLine, noise_fac)
+    );
+
+    // Mountains
+    if (noise_fac >= mountainLine) {
+        col = mix(
+            mountainBase,
+            mountainTop,
+            remap(noise_fac, mountainLine, 1.0, 0.0, 1.0) - (fnoise(vec3(WC*freq*20.0, z), 0.4) > 0.5 ? 0.0 : 0.1)
+        );
+    }
+
+    // Snow-capped peaks
+    if (noise_fac >= mountainLine + 0.19) col = mix(
+        col,
+        snowcap,
+        smoothstep(noise_fac, mountainLine + 0.19, mountainLine + 0.2)
+    );
+
+
+    col = mix(col, tree, 
+        smoothstep(0.5, 0.3, treenoise - (drought_mask < -0.25 ? 0.2 : 0.0))
+    );
+
+	if (noise_fac >= mountainLine - 0.05) {
+		vec3 n = normal(WC, z, eps);
+    	col += col * clamp(dot(n, vec3(1.0)), -1.0, 0.8) * smoothstep(mountainLine - 0.05, 1.0, noise_fac) * 0.4;
+	}
+    // Shading in mountains and plains
+    //col += col * dot(n, vec3(1.0)) * smoothstep(waterLevel + 0.06, mountainLine - 0.1, noise_fac) * 0.05;
+
+    col = mix(col, vec3(drought_mask), preview);//mix(col, vec3(treenoise < 0.3 ? 1.0 : 0.0), preview);
+    //col = vec3(cellular(UV*20.0));
+    // float noise_fac = 0.5;
+    gl_FragColor = vec4(
+        col,//noise_fac > 0.5 ? lightocean : deepocean,
+        1.0
+    );
+
+    // Basic gamma correction
+    float gamma = 1.15;
+    gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0/gamma));
+}
+	</script>
+
+<script>
+    let direction = [0, 0];
+    function onClick(ev) {
+        let onn = [0, 0]
+        if (ev.touches == undefined) {
+            onn = [(ev.clientX) - window.innerWidth / 2, -((ev.clientY) - window.innerHeight / 2)];
+        } else {
+            onn = [(ev.touches[0].clientX) - window.innerWidth / 2, -((ev.touches[0].clientY) - window.innerHeight / 2)];
+        }
+        let onl = Math.sqrt(onn[0] * onn[0] + onn[1] * onn[1]);
+        onn = onn.map(e => (e / onl) * 1);
+        direction = onn;
+        console.log(direction)
+    }
+
+    let attrs = {};
+    let bgShaderProg = null;
+    let quadBuffer = null;
+    let fragShaderSrc = document.getElementById("backgroundfrag").innerHTML;
+    let animReq = null;
+    /** @type {WebGL2RenderingContext} */
+    let gl = null;
+    let canvas = document.getElementById("backgroundcanvas");
+
+    document.body.addEventListener('mousemove', onClick, false);
+    document.body.addEventListener('mousedown', onClick, false);
+    document.body.addEventListener('touchstart', onClick, false);
+    document.body.addEventListener('touchmove', onClick, false);
+    /**
+     * Compiles&Links a WebGL shader program from source
+     * @param {WebGL2RenderingContext} gl Webgl context used to create the shaders
+     * @param {String} vert GLSL source for the vertex shader
+     * @param {String} frag GLSL source for the fragment shader
+     * @returns {WebGLProgram} Compiled and linked shader program from fragment & vertex shader source
+     */
+    function loadShaderPrograms(gl, vert, frag) {
+        let fs = gl.createShader(gl.FRAGMENT_SHADER);
+        let vs = gl.createShader(gl.VERTEX_SHADER);
+
+        gl.shaderSource(fs, fragShaderSrc);
+        gl.shaderSource(vs, vertShaderSrc);
+
+        gl.compileShader(vs);
+        gl.compileShader(fs);
+
+        let success = gl.getShaderParameter(fs, gl.COMPILE_STATUS) && gl.getShaderParameter(vs, gl.COMPILE_STATUS);
+        if (!success) {
+            console.log('One or more shaders failed to compile');
+            console.log(`Fragment: ${gl.getShaderInfoLog(fs)}\nVertex: ${gl.getShaderInfoLog(vs)}`);
+        }
+
+        let program = gl.createProgram();
+        gl.attachShader(program, fs);
+        gl.attachShader(program, vs);
+
+        gl.linkProgram(program);
+
+        if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+            console.log("Error linking shader program:");
+            console.log(gl.getProgramInfoLog(program));
+        }
+
+        return program;
+    }
+
+
+    /**
+     * Generates a vertex buffer with a fullscreen quad for drawing with TRIANGLE_STRIP
+     * @param {WebGL2RenderingContext} gl GL Context of canvas
+     * @returns {WebGLBuffer} A vertex buffer containing the quad vertices, attrib 0 is initialized to a vec2
+     */
+    function getVertBuffer(gl) {
+        let vertexBuffer = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+            -1.0, 1.0,
+            -1.0, -1.0,
+            1.0, 1.0,
+            1.0, -1.0,
+        ]), gl.STATIC_DRAW);
+
+        const numComponents = 2; // just X and Y
+        const numVerts = 5;
+        const type = gl.FLOAT; // 32 bit floats
+
+        gl.vertexAttribPointer(0, numComponents, type, false, 0, 0);
+        gl.enableVertexAttribArray(0);
+
+        //gl.bindBuffer(gl.ARRAY_BUFFER, WebGLBuffer); // Unbind
+
+        return vertexBuffer;
+    }
+
+    const vertShaderSrc = `
+			attribute vec2 vertIn;
+			void main() {
+				gl_Position = vec4(vertIn.xy, 0.0, 1.0);
+			}
+		`
+    function time() {
+        //let date = new Date()
+        //return Date.now();
+        let r = performance.now() + (performance.timing.navigationStart % 100000) * 1.0;
+        return r;
+    }
+
+    let last = time();
+    let position = [10, 100]
+    const drawBackground = timestamp => {
+        gl.canvas.width = window.innerWidth;
+        gl.canvas.height = window.innerHeight;
+        gl.viewport(0, 0,
+            window.innerWidth,
+            window.innerHeight
+        )
+
+        let dt = (time() - last) / 10000;
+        last = time();
+        position = position.map((e, i) => e + direction[i] * dt);
+        //console.log(document.documentElement.scrollTop)
+
+        gl.clearColor(0, 0.6, 0.1, 1.0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+
+        gl.useProgram(bgShaderProg);
+        gl.uniform3f(attrs.offset,
+            position[0],
+            position[1] - document.documentElement.scrollTop / window.top.innerHeight,
+            time() / 100000
+        );
+
+        gl.uniform2f(attrs.size, window.innerWidth, window.innerHeight);
+        gl.uniform1f(attrs.time, time() / 1000); // performance.now() returns milliseconds since page time origin
+
+        gl.bindBuffer(gl.ARRAY_BUFFER, quadBuffer);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        animReq = requestAnimationFrame(drawBackground);
+    }
+
+    gl = canvas.getContext("webgl2");
+    cancelAnimationFrame(animReq); // Ensure no other animations are running
+
+    quadBuffer = getVertBuffer(gl);
+
+    bgShaderProg = loadShaderPrograms(gl, vertShaderSrc, fragShaderSrc);
+    attrs = {
+        offset: gl.getUniformLocation(bgShaderProg, 'offset'),
+        size: gl.getUniformLocation(bgShaderProg, 'size'),
+        time: gl.getUniformLocation(bgShaderProg, 'time')
+    }
+
+    // Make sure its the right size
+    drawBackground();
+
+</script>
