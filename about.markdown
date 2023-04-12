@@ -15,15 +15,17 @@ As you can probably see from my posts, I have many hobbies and I'm interested in
 
 ## Skills
 
-- **Programming and problem solving**
+- **Programming**
   - Adept in C/C++, Python, and Rust, quick to learn new languages and environments, familiar with JavaScript, Java, C#, Nim and Verilog HDL
-  - Worked on small projects including web development, systems programming, embedded programming, automation, and general scripting
+  - Worked on many small and large projects including web development for a local club, systems programming, embedded programming, automation, and general scripting
 - **Working in teams**
-  - Communication and planning for integration of hardware, software, and electronics
-  - Cooperating on designs using collaborative CAD software and virtual discussions
+  - Planned and orchestrated the integration of hardware, software, and electronics within a FRC team with tight deadlines.
+  - Cooperated with a small team on software and physical designs using collaborative CAD, development software, and virtual discussions during COVID for the FIRST Innovation challenge.
 - **Self-learning**
-  - Motivated and determined to learn new, interesting techniques, skills, and material
-  - Obsessed with digging deep on interesting topics and gaining practical and in-depth knowledge about a subject
-- ***TODO Fourth Skill***
+  - Learned about the theory of FPGA design through available academic resources and papers and demonstrated practical skills through self-guided mini-projects involving FPGAs.
+  - Gained experience in tooling and design software for creating PCBs (KiCAD) and creating the associated firmware (ESP-IDF/PlatformIO) for an embedded system.
+- **Problem solving**
+  - Designed hardware and software solutions for embedded sensing and integration with existing systems using low-cost hardware in spite of limited resources and regulations.
+  - Participated in multiple local and global computer science competitions including the Advent of Code, winning two, getting second place in another, and placing in the sought-after top-100 two days for the Advent of Code 2022.
 
 Please contact me at [{{ site.email }}](mailto:{{ site.email }}) for any inquiries, suggestions, or questions. I will try to get back to you as soon as possible :)

@@ -300,7 +300,8 @@ void main() {
 	</script>
 
 <script>
-    let direction = [0, 0];
+    let ss_dir = sessionStorage.getItem("direction");
+    let direction = ss_dir ? JSON.parse(ss_dir) : [0, 0];
     function onClick(ev) {
         let onn = [0, 0]
         if (ev.touches == undefined) {
@@ -311,6 +312,7 @@ void main() {
         let onl = Math.sqrt(onn[0] * onn[0] + onn[1] * onn[1]);
         onn = onn.map(e => (e / onl) * 1);
         direction = onn;
+        sessionStorage.setItem("direction", JSON.stringify(direction));
         console.log(direction)
     }
 
@@ -406,7 +408,8 @@ void main() {
     }
 
     let last = time();
-    let position = [10, 100]
+    let ss_pos = sessionStorage.getItem("offset");
+    let position = ss_pos ? JSON.parse(ss_pos) : [10, 100];
     const drawBackground = timestamp => {
         gl.canvas.width = window.innerWidth;
         gl.canvas.height = window.innerHeight;
@@ -418,6 +421,7 @@ void main() {
         let dt = (time() - last) / 10000;
         last = time();
         position = position.map((e, i) => e + direction[i] * dt);
+        sessionStorage.setItem("offset", JSON.stringify(position));
         //console.log(document.documentElement.scrollTop)
 
         gl.clearColor(0, 0.6, 0.1, 1.0);
