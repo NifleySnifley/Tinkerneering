@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 Hi! I'm Finn.  
-As you can probably see from my posts, I have many hobbies and I'm interested in a multiple different disciplines and areas of technology and engineering, here are some specifics:
+As you can probably see from my posts, I have many hobbies and I'm interested in many different disciplines and areas of technology and engineering, here are some specifics:
 
 - Robotics (control systems, mechanics, etc.)
 - Computer Engineering (FPGA design, computer architecture)
@@ -25,7 +25,7 @@ As you can probably see from my posts, I have many hobbies and I'm interested in
   - Learned about the theory of FPGA design through available academic resources and papers and demonstrated practical skills through self-guided mini-projects involving FPGAs.
   - Gained experience in tooling and design software for creating PCBs (KiCAD) and creating the associated firmware (ESP-IDF/PlatformIO) for an embedded system.
 - **Problem solving**
-  - Designed hardware and software solutions for embedded sensing and integration with existing systems using low-cost hardware in spite of limited resources and regulations.
-  - Participated in multiple local and global computer science competitions including the Advent of Code, winning two, getting second place in another, and placing in the sought-after top-100 two days for the Advent of Code 2022.
+  - Designed hardware and software solutions for embedded sensing and integration with existing systems using low-cost hardware despite of limited resources and regulations.
+  - Participated in multiple local and global computer science competitions including the Advent of Code. During this competition I placed second, then first in two years of local competition, and placed in the sought-after top-100 two days for the Advent of Code 2022.
 
 Please contact me at [{{ site.email }}](mailto:{{ site.email }}) for any inquiries, suggestions, or questions. I will try to get back to you as soon as possible :)
