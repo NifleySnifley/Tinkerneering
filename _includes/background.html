@@ -313,7 +313,7 @@ void main() {
         onn = onn.map(e => (e / onl) * 1);
         direction = onn;
         sessionStorage.setItem("direction", JSON.stringify(direction));
-        console.log(direction)
+        // console.log(direction)
     }
 
     let attrs = {};
@@ -410,6 +410,7 @@ void main() {
     let last = time();
     let ss_pos = sessionStorage.getItem("offset");
     let position = ss_pos ? JSON.parse(ss_pos) : [10, 100];
+    let pcheck = 100;
     const drawBackground = timestamp => {
         gl.canvas.width = window.innerWidth;
         gl.canvas.height = window.innerHeight;
@@ -418,9 +419,9 @@ void main() {
             window.innerHeight
         )
 
-        let dt = (time() - last) / 10000;
+        let dt = (time() - last) / 1000;
         last = time();
-        position = position.map((e, i) => e + direction[i] * dt);
+        position = position.map((e, i) => e + direction[i] * (dt / 10));
         sessionStorage.setItem("offset", JSON.stringify(position));
         //console.log(document.documentElement.scrollTop)
 
@@ -439,7 +440,11 @@ void main() {
 
         gl.bindBuffer(gl.ARRAY_BUFFER, quadBuffer);
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        // console.log(dt)
+        // if ((dt <= 0.3) || (pcheck > 0)) {
         animReq = requestAnimationFrame(drawBackground);
+        // }
+        pcheck--;
     }
 
     gl = canvas.getContext("webgl2");

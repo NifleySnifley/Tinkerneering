@@ -298,3 +298,16 @@ $centercolor: hsla(0deg,0%,75%,0.5);
 
   backdrop-filter: blur(5px);
 }
+
+figure {
+  display: block;
+  margin-left: auto; 
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+figure img {
+  vertical-align: top;
+}
+figure figcaption {
+  text-align: center;
+}
