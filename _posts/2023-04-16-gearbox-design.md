@@ -5,13 +5,11 @@ title:  "TriangleBot Part 1: Gearboxes"
 
 #### Motors:
 
-Since my last blog post thinking about - and deciding on - my summer 
+Since my last blog post discussing my summer 
 robotics projects, I've been working on my design for a 
-three-omni-wheeled holonomic robot "TriangleBot" to build with components
- I have on hand. The obvious next step for me was to decide on what I 
-would use for drive motors, I thought about using [Johnson Electric PLG Gearmotors](https://www.andymark.com/products/johnson-electric-plg-gearmotor-and-output-shaft) because I have 3 on hand and they provide the neccesary gearing without any additional hassle, after throwing together some 
+three-omni-wheeled holonomic "TriangleBot" robot. The obvious next step for me was to decide on what I would use for drive motors, I thought about using [Johnson Electric PLG Gearmotors](https://www.andymark.com/products/johnson-electric-plg-gearmotor-and-output-shaft) because I have 3 on hand and they provide the neccesary gearing without any additional hassle, after throwing together some 
 initial designs using these motors, I came across a few different issues
- that led me to rethink my choice of motors
+ that led me to rethink my choice of motors.
 
 {% include image.html file="JEPLGCAD.png" astyle="width:65%" caption="Initial design of robot corner with JE-PLG motor and 4\" omni" %}
 
