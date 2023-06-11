@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="11.135592mm"
+   height="10.885591mm"
+   viewBox="0 0 11.135591 10.88559"
+   version="1.1"
+   id="svg4834"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4836"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="10.248373"
+     inkscape:cx="24.394117"
+     inkscape:cy="32.346599"
+     inkscape:window-width="1920"
+     inkscape:window-height="1121"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs4831" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-121.24583,-138.30685)">
+    <rect
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:2.13559;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke markers fill"
+       id="rect5624"
+       width="9.000001"
+       height="8.750001"
+       x="122.31363"
+       y="139.37465"
+       ry="0.73513114" />
+    <path
+       d="m 122.31363,147.37465 0.75,0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0396875mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="02c4beef-4636-4438-b8f4-f73a4976c5d8"
+       type="segment"
+       id="path1757"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 128.56363,140.87465 h 0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="093cecc0-5ac8-4233-8c32-bcc243a19162"
+       type="segment"
+       id="path1759"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 124.13319,142.1461 0.0215,-0.0215"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="16e32645-c880-416b-ae66-0d7a940f2ab0"
+       type="segment"
+       id="path1761"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 124.41981,146.74965 h 0.5795"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="32e9f2b4-33e5-47a0-8846-95edd48978a6"
+       type="segment"
+       id="path1763"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 125.63947,141.74965 h -0.5795"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="3b6de717-09bb-4035-b243-27ec10b8817a"
+       type="segment"
+       id="path1765"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 129.31363,140.12465 h -0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="469a80d3-c4c1-4880-83b0-b20c0e9a68f2"
+       type="segment"
+       id="path1767"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 129.31363,141.62465 h -0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="4813cda2-4fa5-44f7-b0d1-a3c0ab935472"
+       type="segment"
+       id="path1769"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 123.06363,148.12465 h 8.25"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0396875mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="4ab49196-b288-4e76-8dee-04b3c0b8c5bb"
+       type="segment"
+       id="path1771"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 124.17609,143.8961 -0.0429,-0.0429"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="6c7bffeb-8e3e-4f4b-b987-8564ad9b131a"
+       type="segment"
+       id="path1773"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 131.31363,148.12465 v -8.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0396875mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="71cf1ff6-2c2a-47b3-b929-74080d132560"
+       type="segment"
+       id="path1775"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 127.27964,146.74965 v -2.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="8bf107ed-1d34-4b64-ad71-d5a4a20fdc5a"
+       type="segment"
+       id="path1777"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 128.56363,140.12465 v 0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="9a0d8b53-3c2f-43c2-8775-438696550cc7"
+       type="segment"
+       id="path1779"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 125.88319,144.60321 0.0429,0.0429"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="9a1cd25a-ce36-422d-9cc5-f4ba00ddea7b"
+       type="segment"
+       id="path1781"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 131.31363,139.37465 h -9"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0396875mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="9e717a6b-b631-47eb-b09c-7ce64de8acdb"
+       type="segment"
+       id="path1783"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 129.27964,144.12465 v 2.625"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="a36f42f7-866d-4ff1-9fff-0d86f7ed865b"
+       type="segment"
+       id="path1785"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 129.81363,141.62465 h 0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="a5dce535-6367-4c96-9547-2a65fc5c4f7d"
+       type="segment"
+       id="path1787"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 127.40464,144.12465 h 1.875"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="ae413ce8-67c1-46a1-9a4d-cf0317df073e"
+       type="segment"
+       id="path1789"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 122.31363,139.37465 v 8"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0396875mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="b90bfbec-9542-46dc-acf3-d48bca11943c"
+       type="segment"
+       id="path1791"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 127.27964,143.99965 0.125,0.125"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="bc17f48b-92cf-44d2-8ae6-a0c5f5b3d2fe"
+       type="segment"
+       id="path1793"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 130.56363,141.62465 v -1.5"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="bda29d83-302c-4896-a582-1c1f2d57432f"
+       type="segment"
+       id="path1795"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 123.96714,146.56215 -0.1875,-0.1875"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="c925fb92-45d2-4b77-b7a0-ec32037de0a0"
+       type="segment"
+       id="path1797"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 130.56363,140.12465 h -0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="d7d3d980-3d2b-48e5-9573-6f28b95fcbd5"
+       type="segment"
+       id="path1799"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 125.92609,146.3532 -0.0215,0.0215"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="ebfbd294-0ca8-45aa-9852-a683c4bc7f5d"
+       type="segment"
+       id="path1801"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 129.31363,140.87465 v 0.75"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="f27ae089-59f9-45b2-8255-d9287abb16a1"
+       type="segment"
+       id="path1803"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 126.27964,142.12465 -0.1875,-0.1875"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="f5505a70-3733-49e2-8079-1d6cd1ddf2b5"
+       type="segment"
+       id="path1805"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 129.81363,140.12465 v 1.5"
+       layer="F.Cu"
+       net="0"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.0661458mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="fe997927-9753-4109-9ed5-8b21e97380ad"
+       type="segment"
+       id="path1807"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 125.88319,144.60321 c -0.22637,-0.22638 -0.53341,-0.35356 -0.85355,-0.35356"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="1c784ac2-8593-4b8c-8fb7-03ae0ede82d5"
+       type="gr_arc"
+       id="path1809"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 126.09214,141.93715 c -0.12005,-0.12005 -0.28288,-0.1875 -0.45267,-0.1875"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="2bf9589f-3ac4-4481-a303-fcf314f54e64"
+       type="gr_arc"
+       id="path1811"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 123.77964,142.99965 c 0,0.32015 0.12718,0.62718 0.35355,0.85355"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="80bf4dab-5ca3-44e2-96c2-332750cd1f55"
+       type="gr_arc"
+       id="path1813"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 125.92609,144.6461 c 0.22637,0.22637 0.35355,0.53341 0.35355,0.85355"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="931a6f3d-db8d-4a11-96e9-77155c9e7f51"
+       type="gr_arc"
+       id="path1815"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 125.90464,146.37465 c -0.24011,0.24011 -0.56577,0.375 -0.90533,0.375"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="ca534b69-4b48-4ab5-b016-7de6973249a2"
+       type="gr_arc"
+       id="path1817"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 124.17609,143.8961 c 0.22637,0.22637 0.5334,0.35355 0.85355,0.35355"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="d08c36bd-9de8-452f-89c5-851af198383a"
+       type="gr_arc"
+       id="path1819"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 125.05997,141.74965 c -0.33956,0 -0.66522,0.13489 -0.90533,0.375"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="d2385e75-d0be-4186-a60f-ff92a2f04acf"
+       type="gr_arc"
+       id="path1821"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 124.13319,142.1461 c -0.22637,0.22637 -0.35355,0.53341 -0.35355,0.85355"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="d27f2d18-20d3-4abf-999b-c69b9844fc18"
+       type="gr_arc"
+       id="path1823"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 126.27964,145.49965 c 0,0.32015 -0.12718,0.62718 -0.35355,0.85355"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="db99ccd1-30e6-4f71-b3d7-7502193b65d9"
+       type="gr_arc"
+       id="path1825"
+       sodipodi:nodetypes="cc" />
+    <path
+       d="m 123.96714,146.56215 c 0.12005,0.12006 0.28288,0.1875 0.45267,0.1875"
+       layer="F.Cu"
+       status="0"
+       style="fill:none;stroke:#840000;stroke-width:0.132292mm;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1"
+       tstamp="fb564d1e-d666-4a97-8a4d-7b3820ee9b21"
+       type="gr_arc"
+       id="path1827"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
