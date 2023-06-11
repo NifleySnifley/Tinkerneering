@@ -7,7 +7,6 @@ description: Miniature 3D printed Mac-128K-shaped photo frame using an ATtiny84 
 image: photoframe/photoframe.jpg
 links:
  - "[Software Github](https://github.com/NifleySnifley/ATtiny-PhotoFrame)"
-
 ---
 
 More information coming soon!

@@ -5,6 +5,7 @@
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
+  // background-color: hsla(0,0%,80%,1);
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -42,7 +43,7 @@
   .page-link {
     color: $text-color;
     line-height: $base-line-height;
-
+    // z-index: 1 000;
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
@@ -401,4 +402,13 @@ figure figcaption {
 
 .project-linklist {
   list-style-type:disc;
+}
+
+.project-wiplabel {
+  background-color: lightblue;
+  color: black;
+  border-radius: 1em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  text-decoration: none !important;
 }

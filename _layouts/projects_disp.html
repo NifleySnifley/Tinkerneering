@@ -12,7 +12,8 @@ layout: default
 	{%- if site.projects.size > 0 -%}
 	<h1 class="project-list-heading">{{ page.list_title | default: "Projects" }}</h2>
 		<ul class="project-list">
-			{%- for project in site.projects -%}
+			{% assign projsorted = site.projects | sort: 'date' | reverse %}
+			{%- for project in projsorted -%}
 			<li class="project-card">
 				<div style="float: left; width: 50%">
 					<h3>
@@ -21,11 +22,16 @@ layout: default
 						{% else %}
 						{% assign proj_href = project.url | relative_url %}
 						{% endif %}
+
+
 						<a class="project-link" href="{{proj_href}}">
 							{{ project.title | escape }}
+							{% if project.wip %}
+							&nbsp;<span class="project-wiplabel">WIP</span>
+							{% endif %}
 						</a>
 					</h3>
-					<p class="project-description">{{ project.description }}</p>
+					<p class="project-description">{{ project.description | markdownify }}</p>
 
 					<ul class="project-linklist">
 						{%- for link in project.links -%}
