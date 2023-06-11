@@ -1,4 +1,6 @@
 <figure style="{{ include.astyle }}">
-	<img src="/assets/{{ include.file }}" />
+	<img src="/assets/{{ include.file }}" style="{{ include.istyle }}" />
+	{%- if include.caption -%}
 	<figcaption><i>{{ include.caption }}</i></figcaption>
+	{%- endif -%}
 </figure>

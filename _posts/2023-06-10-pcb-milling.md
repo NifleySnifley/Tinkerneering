@@ -3,7 +3,6 @@ layout: post
 title:  "PCB Milling Adventures"
 date:   2023-06-10 12:09:00 -0500
 categories: blog
-
 ---
 
 After working on the trianglebot’s hardware and software for the last few weeks I thought that I’d take a break and work on some other miscellaneous electronics related to the trianglebot. I need to hook the encoders (5v) up to the beaglebone encoder inputs (3.3v), and I have always wanted to try milling PCBs on my CNC, so here we go! A few weeks ago I ordered some single-sided copper-clad FR4 with intentions of doing this, so I conveniently had all of the materials on hand. 
@@ -19,7 +18,7 @@ The longest and most important step of my adventure in PCB milling was the setup
 
 My goal was to eventually make a PCB that could level shift the signals for all three encoders on the triangle bot but for a start, I just wanted to design a small PCB that would level shift one encoder to test the capabilities of PCB milling on my CNC. I designed the PCB in KiCAD and to convert it to G-Code I first exported it as the Gerber files commonly accepted by PCB manufacturers. The next step and getting the PCB ready for manufacturing was to convert the Gerbers to toolpaths for the CNC. To do this I used a convenient piece of software  that I found called [pcb2gcode](https://github.com/pcb2gcode/pcb2gcode)  which comes with an easy-to-use GUI. The few changes I had to make to the default pcb2gcode configuration was to change the size of the milling bit I would use to do the cutout and I also enabled the Voronoi regions feature which maximizes the width of tracks and reduces the amount of milling but doesn’t preserve the precise shape of footprints, which was just fine for this PCB. Otherwise the default settings worked perfectly fine for me including the 0.05 mm depth of cut when isolation routing. After this configuration pcb2gcode produces 3 G-Code programs: one for isolation routing, one for drilling, and one for the final cutout. I have my copper clad board attached to its milling surface using blue tape and super glue so I don't need to use any tabs when doing the cutout, but pcb2gcode does have this feature. I always think it's a good idea to throw the G-Code into a G-Code simulator like [ncviewer](https://ncviewer.com/) just to make sure that everything looks okay before I run it on the actual machine. Everything looked fine on the first try so I went ahead and got the machine all set up for actually milling the PCB.
 
-<div style="width: 100%, height: fit-content, display: block; overflow: auto;">
+<div style="width: 100%; height: fit-content, display: block; overflow: auto;">
 {% include image.html file="testpcb_schematic.png" astyle="margin-left: 5%; display:inline_block; float: left; width:40%" caption="Schematic entry in KiCAD" %}
 {% include image.html file="testpcb_board.png" astyle="margin-right: 5%;display:inline_block; float: right; width:40%" caption="Board design in KiCAD" %}
 {% include image.html file="pcb2gcode_output_test.png" astyle="margin-left: 5%; display:inline_block; float: left; width:40%" caption="Schematic entry in KiCAD" caption="Voronoi-mode output of pcb2gcode" %}
@@ -42,9 +41,9 @@ Since I had already got bed leveling setup on the CNC and created a macro to aut
 
 I've had experience assembling PCBs before, and this was no different aside from the lack of a stencil or solder mask. I first applied solder paste to the pads where I was to attach the components using a fine-tipped syringe and then placed the components with tweezers. After the components were placed (the tiny JST SH connector commonly referred to as a “Qwiic” connector thanks to SparkFun, and the 6 tiny 0603 resistors), I put the completed assembly in my reflow oven which is an entry-level Puhui T-962 model, and ran the standard reflow curve for the type of solder paste I used (Sn63 Pb37). After reflowing my PCB was pretty much done! 
 
-<div style="width: 100%, height: fit-content, display: block; overflow: auto;">
-{% include image.html file="IMG_3614_edit.JPG" astyle="margin-left: 5%;display:inline_block; float: left; width:40%" caption="PCB with solder paste applied" %}
-{% include image.html file="IMG_3615_edit.JPG" astyle="margin-right: 5%; display:inline_block; float: right; width:40%" caption="PCB with components placed" %}
+<div style="width: 100%; height: fit-content, display: block; overflow: auto;">
+{% include image.html file="IMG_3614_edit.jpg" astyle="margin-left: 5%;display:inline_block; float: left; width:40%" caption="PCB with solder paste applied" %}
+{% include image.html file="IMG_3615_edit.jpg" astyle="margin-right: 5%; display:inline_block; float: right; width:40%" caption="PCB with components placed" %}
 </div>
 
 {% include image.html file="IMG_3620.JPG" astyle="width:65%" caption="Finished PCB with SMD and THT components installed!" %}

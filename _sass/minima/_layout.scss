@@ -312,3 +312,93 @@ figure img {
 figure figcaption {
   text-align: center;
 }
+
+// Projects!
+.project-list-heading {
+  @include relative-font-size(1.75);
+}
+
+.project-list {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: $spacing-unit;
+  }
+}
+
+.project-meta {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.project-link {
+  display: block;
+  @include relative-font-size(1.5);
+  @include media-query($on-palm) {
+    @include relative-font-size(1);
+  }
+}
+
+.project-header {
+  margin-bottom: $spacing-unit;
+}
+
+.project-title {
+  @include relative-font-size(2.625);
+  letter-spacing: -1px;
+  line-height: 1;
+
+  @include media-query($on-laptop) {
+    @include relative-font-size(2.25);
+  }
+}
+
+.project-content {
+  margin-bottom: $spacing-unit;
+
+  h2 {
+    @include relative-font-size(2);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.75);
+    }
+  }
+
+  h3 {
+    @include relative-font-size(1.625);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.375);
+    }
+  }
+
+  h4 {
+    @include relative-font-size(1.25);
+
+    @include media-query($on-laptop) {
+      @include relative-font-size(1.125);
+    }
+  }
+}
+
+.project-card {
+  // background-color: red;
+  background-color: hsla(0,0%,80%,0.55);//hsla(83,29%,64%,0.75);//hsl(198,20%,80%);
+  padding: 1em;
+  border: 3px solid hsla(0,0%,90%,0.55);//hsl(83,29%,55%);
+  overflow: auto;
+  border-radius: 1em;
+}
+
+.project-description {
+  font-size: 16px;
+  margin-bottom: 0em;
+  @include media-query($on-palm) { 
+      font-size: 12px;
+  }
+}
+
+.project-linklist {
+  list-style-type:disc;
+}

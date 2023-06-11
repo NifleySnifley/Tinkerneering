@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+<div class="home">
+	{%- if page.title -%}
+	<h1 class="page-heading">{{ page.title }}</h1>
+	{%- endif -%}
+
+	{{ content }}
+
+	{%- if site.projects.size > 0 -%}
+	<h1 class="project-list-heading">{{ page.list_title | default: "Projects" }}</h2>
+		<ul class="project-list">
+			{%- for project in site.projects -%}
+			<li class="project-card">
+				<div style="float: left; width: 50%">
+					<h3>
+						{% if project.link_override %}
+						{% assign proj_href = project.link_override %}
+						{% else %}
+						{% assign proj_href = project.url | relative_url %}
+						{% endif %}
+						<a class="project-link" href="{{proj_href}}">
+							{{ project.title | escape }}
+						</a>
+					</h3>
+					<p class="project-description">{{ project.description }}</p>
+
+					<ul class="project-linklist">
+						{%- for link in project.links -%}
+						<li class="project-linklistlink">
+							{{ link | markdownify }}
+						</li>
+						{%- endfor -%}
+					</ul>
+				</div>
+				<div
+					style="width: 50%; height:fit-content; padding: 0; margin:0; overflow: auto; display: inline-block; float: right">
+					{% include image.html file=project.image astyle="margin: 0" istyle="border-radius: 0.5em;"
+					%}
+				</div>
+			</li>
+			{%- endfor -%}
+		</ul>
+
+		{%- endif -%}
+
+</div>
