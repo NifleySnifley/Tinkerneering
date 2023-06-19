@@ -15,7 +15,7 @@ layout: default
 			{% assign projsorted = site.projects | sort: 'date' | reverse %}
 			{%- for project in projsorted -%}
 			<li class="project-card">
-				<div style="float: left; width: 50%">
+				<div style="float: left; width: calc(50% - 1em); margin-right: 1em">
 					<h3>
 						{% if project.link_override %}
 						{% assign proj_href = project.link_override %}
