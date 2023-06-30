@@ -17,7 +17,7 @@ Last year during my initial brainstorming, development, and design of the rocket
 
 <!-- TODO: Add image enlarge-on-click modal -->
 
-Having a web-based UI makes supporting the end user experience consistently across different platforms easily, but the neccesary IPC between the backend server, the web UI, and the rocket tracker itself is a whole other level of (possibly) avoidable complexity on the software side of things. Using a Raspberry Pi as the backend server is also expensive, complex, and not very portable for a rocket tracker that's usually used while searching for a rocket in a field or (hopefully not) in the woods.
+Having a web-based UI makes supporting the end user experience consistently across different platforms easy, but the neccesary IPC between the backend server, the web UI, and the rocket tracker itself is a whole other level of (possibly) avoidable complexity on the software side of things. Using a Raspberry Pi as the backend server is also expensive, complex, and not very portable for a rocket tracker that's usually used while searching for a rocket in a field or (hopefully not) in the woods.
 
 ### A New Architecture
 

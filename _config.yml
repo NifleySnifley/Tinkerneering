@@ -31,6 +31,10 @@ github_username: NifleySnifley
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
 
 collections:
   projects:
