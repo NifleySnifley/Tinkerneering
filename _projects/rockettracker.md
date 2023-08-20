@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  "Rocket Tracker"
+projid: rtrk
 date:   2022-08-8 00:00:00 -0500
 wip: true
 categories: project
@@ -15,7 +16,7 @@ sysname: "PLACEHOLDER"
 
 ### The Rocket Tracker
 
-Over the last few years, me and my dad have gotten more and more involved in the world of amateur high-power rocketry through our local branch of the Tripoli rocketry club. As we started working on bigger and more powerful rockets, we ended up having the same problem that so many others in the rocketry community have came across as well: when my rocket lands in a corn field, how do I find it? The most common solution is to equip the rocket with a long-range radio tracking device, and this can come in the form of small radio direction finding (RDF) beacons for falconry to GPS-based tracking devices that sometime require HAM liscensing. I thought it would be a fun challenge to design my own tracking device to launch in our rockets, so here we are! It has certainly been an adventure designing my own tracking system and I've learned so much about PCB design, electronics, and RF along the way.
+Over the last few years, me and my dad have gotten more and more involved in the world of amateur high-power rocketry through our local branch of the Tripoli rocketry club. As we started working on bigger and more powerful rockets, we ended up having the same problem that so many others in the rocketry community have came across as well: when my rocket lands in a corn field, how do I find it? The most common solution is to equip the rocket with a long-range radio tracking device, and this can come in the form of small radio direction finding (RDF) beacons for falconry to GPS-based tracking devices that sometime require HAM licensing. I thought it would be a fun challenge to design my own tracking device to launch in our rockets, so here we are! It has certainly been an adventure designing my own tracking system and I've learned so much about PCB design, electronics, and RF along the way.
 
 ### Concept
 

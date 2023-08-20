@@ -3,6 +3,7 @@ layout: post
 title:  "Rocket Tracker Part 3: Receiver Design"
 date:   2023-07-17 18:09:00 -0500
 categories: blog
+project: rtrk
 ---
 If you've read my last blog post you'll know that I've been at work redesigning and rethinking the receiver for my rocket tracker. I've spent the last few weeks designing new hardware for this integral component of the rocket tracking system. After all of my work laying out, reviewing, and double-checking a new receiver PCB, it is with great pleasure that I can finally inform you that I’m broke! I just ordered all of the components, stencils, and boards for the receiver and I guess now is a better time than ever to explain the process and work that went into designing this new piece of hardware for my project.
 

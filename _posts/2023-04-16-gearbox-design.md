@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "TriangleBot Part 1: Gearboxes"
+project: trbp
 ---
 
 #### Motors:

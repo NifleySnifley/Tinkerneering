@@ -3,6 +3,7 @@ layout: post
 title:  "PCB Milling Adventures"
 date:   2023-06-10 12:09:00 -0500
 categories: blog
+project: trbp
 ---
 
 After working on the trianglebot’s hardware and software for the last few weeks I thought that I’d take a break and work on some other miscellaneous electronics related to the trianglebot. I need to hook the encoders (5v) up to the beaglebone encoder inputs (3.3v), and I have always wanted to try milling PCBs on my CNC, so here we go! A few weeks ago I ordered some single-sided copper-clad FR4 with intentions of doing this, so I conveniently had all of the materials on hand. 

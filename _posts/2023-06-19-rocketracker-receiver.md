@@ -3,6 +3,7 @@ layout: post
 title:  "Rocket Tracker Part 2: Receiver Architecture"
 date:   2023-06-19 12:09:00 -0500
 categories: blog
+project: rtrk
 ---
 (Don't be confused that I'm considering this post part two, I consider my initial designs and ideas last summer to be part 1 and I will write up a retrospective blog post about that sometime)
 

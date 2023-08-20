@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  "TriangleBot"
+projid: trbp
 date:   2023-05-20 00:00:00 -0500
 wip: true
 categories: project
@@ -14,3 +15,9 @@ Triangle bot, Triangle bot
 Triangle bot hates particle bot
 They have a fight, Triangle wins
 Triangle bot
+
+The TriangleBot is a project that was initially designed to be a mobile robotic base for the development and testing of robot control and motion algorithms. Since I started working on this design, the triangle bot has since developed into a more complete robot which is planned to consist of the original mobile base along with a 3dof arm/manipulator and grabber. 
+
+Currently, the mobile base is assembled with its 3 gearboxes and although it functions properly, the gearboxes have a good deal of resistance that makes it difficult to drive accurately. I think that this is due to both an inadequate gearing ratio and the fact that it was extremely difficult to press-fit the gear on straight which causes unequal friction throughout the rotation of the shaft. Presently, the next step is to evaluate the root cause of this issue and hopefully improve the robot's driving characteristics and gearbox consistency through the most minimal modification possible.
+
+The arm is also partially completed, so far the mechanical design of the 3-joint arm itself is complete aside from the gripper, which will be added later.

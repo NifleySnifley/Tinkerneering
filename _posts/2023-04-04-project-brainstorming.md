@@ -1,5 +1,6 @@
 ---
 layout: post
+project: trbp
 title:  "Brainstorming Project Ideas"
 ---
 

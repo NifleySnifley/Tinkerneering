@@ -1,6 +1,7 @@
 ---
 layout: project
 title:  "Mac 128K Memory Repair"
+projid: mac128k
 date:   2022-04-24 00:00:00 -0500
 categories: project
 description: I troubleshooted and fixed a Mac 128K computer's RAM issues and created a custom tool to test the memory ICs along the way.
