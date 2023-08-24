@@ -32,9 +32,29 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-compress-images
+
+compress_images:
+  images_path: "assets/**/*.{gif,png,jpg,jpeg,svg}"
+imageoptim:
+  pngcrush: false
+  optipng: false
+  advpng: false
+  pngquant: false
+  oxipng: false
+  jhead: false
+  jpegoptim: true
+  gifsicle: false
+  svgo: false
 
 whitelist:
   - jekyll-redirect-from
+
+livereload_ignore:
+  - "_compress_images_cache.yml"
+
+exclude:
+  - "_compress_images_cache.yml"
 
 collections:
   projects:
