@@ -63,7 +63,6 @@ assets/KeepPostedGearbox.gif: KeepPostedGearbox.gif
 assets/incanceivable/IMG_3239.jpg: IMG_3239.jpg
 assets/incanceivable/IMG_3655.jpg: IMG_3655.jpg
 assets/pcb2gcode_output_test.png: pcb2gcode_output_test.png
-assets/photoframe/photoframe.jpg: photoframe.jpg
 assets/photoframe/photoframe_hands.jpg: photoframe_hands.jpg
 assets/photoframe/photoframe_prototype.jpg: photoframe_prototype.jpg
 assets/projectplaceholder.png: projectplaceholder.png
@@ -122,3 +121,9 @@ assets/tinyrobot/servo_with_adapter.jpg: servo_with_adapter.jpg
 assets/tinyrobot/wiring_batt.jpg: wiring_batt.jpg
 assets/tinyrobot/wiring_nobatt.jpg: wiring_nobatt.jpg
 assets/trianglebot/tribot_basic.jpg: tribot_basic.jpg
+assets/photoframe/photoframe.jpg: photoframe.jpg
+assets/rocketracker/rx_sw/appwindow.png: appwindow.png
+assets/rocketracker/rx_sw/IMG_3775.JPG: IMG_3775.JPG
+assets/rocketracker/rx_sw/gui_drawing.jpg: gui_drawing.jpg
+assets/aoc/passagepathing.png: passagepathing.png
+assets/aoc/passagepathing.gif: passagepathing.gif

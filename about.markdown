@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 Hi! I'm Finn.  
-As you can probably see from my posts, I have many hobbies and I'm interested in many different disciplines and areas of technology and engineering, here are some specifics:
+As you can probably see from my posts, I'm interested in many different engineering disciplines and topics, here are some specifics:
 
 - Robotics (control systems, mechanics, etc.)
 - Computer Engineering (FPGA design, computer architecture)

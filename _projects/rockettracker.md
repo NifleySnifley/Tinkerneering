@@ -2,7 +2,7 @@
 layout: project
 title:  "Rocket Tracker"
 projid: rtrk
-date:   2022-08-8 00:00:00 -0500
+date:   2023-08-8 00:00:00 -0500
 wip: true
 categories: project
 description: A custom GPS tracking and telemetry device for use in high powered amateur rocketry using an ESP32 module and LoRa radio.
