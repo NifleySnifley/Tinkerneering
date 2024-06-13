@@ -7,7 +7,7 @@ permalink: /about/
 Hi! I'm Finn.  
 As you can probably see from my posts, I'm interested in many different engineering disciplines and topics, here are some specifics:
 
-- Robotics (control systems, mechanics, etc.)
+- Robotics/Mechatronics & Control Systems
 - Computer Engineering (FPGA design, computer architecture)
 - Embedded Systems (IOT devices, PCB design, firmware and support software, real-time systems)
 - Computer Science (DSA, networking, systems programming)
@@ -29,5 +29,11 @@ As you can probably see from my posts, I'm interested in many different engineer
 - **Problem solving**
   - Designed hardware and software solutions for embedded sensing and integration with existing systems using low-cost hardware despite limited resources and regulations.
   - Participated in multiple local and global computer science competitions including the Advent of Code. In 2021 I placed 2nd in our local Advent of Code competition. In 2022, I improved to 1st place as well as 2 finishes in the global top 100. In 2023, I improved yet again, placing 1st locally and somehow managed to get on the global leaderboard 5 times!
+
+### Other skills/experience:
+
+- Over 4 years of OnShape CAD experience
+- Firmware development on AVR (bare-metal), RP2040, ESP32 and assorted ARM microcontrollers
+- Experience using Fusion 360 for CAM & CNC manufacturing
 
 Please contact me at [{{ site.email }}](mailto:{{ site.email }}) for any inquiries, suggestions, or questions. I will try to get back to you as soon as possible :)
