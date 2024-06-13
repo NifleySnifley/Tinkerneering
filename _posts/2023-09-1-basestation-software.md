@@ -30,7 +30,7 @@ As I set off to create a new protocol between the receiver and the user-end soft
 After I got the receiver to talk nicely to the user-end software, I decided that I should probably throw some basic tracker firmware together so I would have some data to display on the GUI. I hadn't touched the tracker in almost a year so refamiliarizing myself with the PlatformIO tooling and ESP-IDF API took a while. This problably warrants a future more specific blog post... 
 Anyways, I got some basic features implemented:
 
-- Ported the RFM97CW (sx1276) radio drive to the ESP-IDF SPI API
+- Ported the RFM97CW (sx1276) radio driver to the ESP-IDF SPI API
 - Parsing the GPS data and sending it with the protocol I had devised
 
 ## Displaying *Stuff*
