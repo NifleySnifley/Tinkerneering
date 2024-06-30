@@ -407,10 +407,12 @@ void main() {
         return r;
     }
 
-    let last = time();
+    var last = time();
     let ss_pos = sessionStorage.getItem("offset");
     let position = ss_pos ? JSON.parse(ss_pos) : [10, 100];
     let pcheck = 100;
+
+    let overtimes = 0
     const drawBackground = timestamp => {
         gl.canvas.width = window.innerWidth;
         gl.canvas.height = window.innerHeight;
@@ -424,6 +426,10 @@ void main() {
         position = position.map((e, i) => e + direction[i] * (dt / 10));
         sessionStorage.setItem("offset", JSON.stringify(position));
         //console.log(document.documentElement.scrollTop)
+
+        if (dt > 1 / 30) {
+            overtimes++
+        }
 
         gl.clearColor(0, 0.6, 0.1, 1.0);
         gl.clear(gl.COLOR_BUFFER_BIT);
@@ -442,7 +448,11 @@ void main() {
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         // console.log(dt)
         // if ((dt <= 0.3) || (pcheck > 0)) {
-        animReq = requestAnimationFrame(drawBackground);
+        if (overtimes <= 2) {
+            animReq = requestAnimationFrame(drawBackground);
+        } else {
+            console.warn("Background animation stopped due to low performance :(")
+        }
         // }
         pcheck--;
     }
@@ -459,7 +469,23 @@ void main() {
         time: gl.getUniformLocation(bgShaderProg, 'time')
     }
 
+    last = time()
     // Make sure its the right size
     drawBackground();
+
+    function stop_resize() {
+        if (overtimes > 2) {
+            //cancelAnimationFrame(animReq);
+            overtimes = 0
+            drawBackground()
+        }
+        //overtimes = 0
+    }
+
+    let resizetimeout;
+    window.onresize = function () {
+        clearTimeout(resizetimeout);
+        resizetimeout = setTimeout(stop_resize, 100);
+    };
 
 </script>
