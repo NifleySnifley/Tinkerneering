@@ -49,3 +49,9 @@ After reflowing the rp2040 and USB connector were left with a few solder bridges
 {% include image.html file="rocketracker/pcb_assy/blinking.jpg" astyle="width:65%" caption="Happily blinking" %}
 
 Thanks for reading! Keep posted for the future of this board, hopefully it will get some firmware soon!
+
+
+### Update 7/1/2024
+I finally got around to making a case for the receiver!
+
+{% include image.html file="rocketracker/receiver_case.jpg" astyle="width:55%" caption="3D Printed semi-official looking case" %}
