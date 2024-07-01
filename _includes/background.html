@@ -448,7 +448,7 @@ void main() {
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
         // console.log(dt)
         // if ((dt <= 0.3) || (pcheck > 0)) {
-        if (overtimes <= 2) {
+        if (overtimes <= 5) {
             animReq = requestAnimationFrame(drawBackground);
         } else {
             console.warn("Background animation stopped due to low performance :(")
@@ -474,7 +474,7 @@ void main() {
     drawBackground();
 
     function stop_resize() {
-        if (overtimes > 2) {
+        if (overtimes > 5) {
             //cancelAnimationFrame(animReq);
             overtimes = 0
             drawBackground()
