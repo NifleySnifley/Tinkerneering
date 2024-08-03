@@ -2,11 +2,11 @@
 layout: project
 title:  "Rocket Tracker"
 projid: rtrk
-date:   2023-08-8 00:00:00 -0500
+date:   2024-07-8 00:00:00 -0500
 wip: true
 categories: project
-description: A custom GPS tracking and telemetry device for use in high powered amateur rocketry using an ESP32 module and LoRa radio.
-image: rocketracker/trackerv01.jpg
+description: A custom GPS tracking and telemetry device for use in high powered amateur rocketry using an ESP32-S3, GPS, LoRa radio, and a suite of other sensors.
+image: rtrkv3/finished_device.jpg
 links:
  - "[Hw & Sw Github](https://github.com/NifleySnifley/RocketTracker)"
 redirect_from:
