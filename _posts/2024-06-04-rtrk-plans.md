@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Rocket Tracker: Plans for the Summer"
+title:  "Rocket Tracker Part 9: Plans for the Summer"
 date:   2024-06-04 12:09:00 -0500
 categories: blog
 project: rtrk

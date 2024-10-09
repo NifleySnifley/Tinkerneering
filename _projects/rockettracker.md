@@ -2,11 +2,11 @@
 layout: project
 title:  "Rocket Tracker"
 projid: rtrk
-date:   2023-08-8 00:00:00 -0500
+date:   2024-07-8 00:00:00 -0500
 wip: true
 categories: project
-description: A custom GPS tracking and telemetry device for use in high powered amateur rocketry using an ESP32 module and LoRa radio.
-image: rocketracker/trackerv01.jpg
+description: A custom GPS tracking and telemetry device for use in high powered amateur rocketry using an ESP32-S3, GPS, LoRa radio, and a suite of other sensors.
+image: rtrkv3/finished_device.jpg
 links:
  - "[Hw & Sw Github](https://github.com/NifleySnifley/RocketTracker)"
 redirect_from:
@@ -21,6 +21,8 @@ Over the last few years, me and my dad have gotten more and more involved in the
 ### Concept
 
 The rocket tracking system consists of two components, the actual tracker that goes into the rocket, a nd a "receiver" or base station that stays on the ground and receives information from the tracker in the rocket. Originally I had planned to make the receiver a self-contained device using a Raspberry Pi with a screen, but after going down that path a bit I realized that it was unnecessarily complex and a Raspberry Pi was expensive and overpowered. Going forward, I plan on using a rp2040 microprocessor to create a base station "dongle" with its USB capability. For the actual tracker, my idea from the start was to use an ESP32 because of its bluetooth capabilities and powerful processor. The tracker would also include a GPS, magnetometer, gyro, barometer, and high-g accelerometer for gathering flight info and keeping track of the rocket. Aside from this, the most important component of the tracking system is the radio system that allows the tracker to send data back to the base station, for this I chose to use a HopeRF RFM97CW LoRa module because of it's high power and relatively low price.
+
+## See Blog Posts for More Information!
 
 <!-- 
 ## The PLACEHOLDER Tracking System
