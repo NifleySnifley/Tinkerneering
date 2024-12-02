@@ -3,7 +3,7 @@ layout: project
 title:  "Weed Spraying Rover"
 projid: wrbt
 date:   2024-06-12 00:00:00 -0500
-wip: true
+wip: false
 categories: project
 description: An off-road capable mobile robot with accessories for weedwacking and dispensing liquid weed killer controlled with ROS2.
 image: weedrover/squirt.jpg

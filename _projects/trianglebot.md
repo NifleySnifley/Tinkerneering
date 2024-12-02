@@ -3,7 +3,7 @@ layout: project
 title:  "TriangleBot"
 projid: trbp
 date:   2023-05-20 00:00:00 -0500
-wip: true
+wip: false
 categories: project
 description: An entirely custom-built triangular holonomic-drive robot using a [Beaglebone Blue](https://beagleboard.org/blue) and the [YARP](https://yarp.it/latest/) robotics framework. 
 image: trianglebot/tribot_basic.jpg

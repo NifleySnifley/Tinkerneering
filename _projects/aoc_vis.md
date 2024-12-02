@@ -4,7 +4,7 @@ projid: aocvis
 title:  "AoC Visualizations"
 date:   2022-12-1 00:00:00 -0500
 categories: project
-description: Visualizations I have created for various Advent of Code problems that I have solved
+description: Visualizations I have created for various Advent of Code problems that I have solved. Click for interactive JavaScript visualizations!
 image: aoc/passagepathing.png
 links:
  - "[ObservableHQ Collection](https://observablehq.com/collection/@nifleysnifley/advent-of-code-visualizations)"
