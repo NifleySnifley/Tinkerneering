@@ -5,7 +5,7 @@ title:  "FPGA RISC-V SoC"
 date:   2024-10-9 00:00:00 -0500
 wip: true
 categories: project
-description: I'm currently designing a SoC based on my own RISC-V rv32IM-compatible processor core with VGA graphics and other miscellaneous IO functionality TBD. Initially, I targeted the amazing [Upduino](https://tinyvision.ai/products/fpga-development-board-upduino-v3-1)'s [ICE40UP5K](https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus) FPGA, but in search of higher performance, I have pipelined my initial design and switched to using a [ECP5](https://www.latticesemi.com/Products/FPGAandCPLD/ECP5) to allow for a more complex and optimized design with more FUNctionality.
+description: SoC design based on my own RISC-V rv32IM-compatible processor core with VGA graphics and other miscellaneous IO functionality TBD. Initially, I targeted the amazing [Upduino](https://tinyvision.ai/products/fpga-development-board-upduino-v3-1)'s [ICE40UP5K](https://www.latticesemi.com/en/Products/FPGAandCPLD/iCE40UltraPlus) FPGA, but in search of higher performance, I have pipelined my initial design and switched to using a [ECP5](https://www.latticesemi.com/Products/FPGAandCPLD/ECP5) to allow for a more complex and optimized design with more FUNctionality.
 image: fpga_cpu/fpeega.jpg
 links:
  - "[GitHub](https://github.com/NifleySnifley/CPUDesign-IS)"
@@ -36,3 +36,14 @@ Here's a pinout diagram of my initial Upduino-based carrier board with 2-bit VGA
 <br/>
 It also runs on a iceFUN board! (faster, but with less memory)
 {% include image.html file="fpga_cpu/pinout.png" astyle="width:65%" caption="iceFUN blinky!" %} -->
+
+### Gallery
+
+{% include image.html file="fpga_cpu/ecp5_board.jpg" astyle="width:65%" caption="ECP5 setup (ColorLight board)" %}
+
+{% include image.html file="fpga_cpu/qr_code.jpg" astyle="width:65%" caption="Running a QR code generator library from flash bootloader on the Upduino SoC with VGA output" %}
+
+### Videos
+
+Conway's Game of Life with VGA output
+<iframe width="100%" height="512" src="https://www.youtube.com/embed/gDQ2a3xlM30" title="Conway&#39;s Game of Life on my RISC-V SoC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
