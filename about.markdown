@@ -27,6 +27,7 @@ As you can probably see from my projects and posts, I'm interested in all sorts 
   - Learned about the theory of FPGA design through available academic resources and papers and demonstrated practical skills through self-guided mini-projects involving FPGAs.
   - Gained experience in tooling and design software for creating PCBs (KiCAD) and creating the associated firmware (ESP-IDF/PlatformIO) for an embedded system.
   - Amateur General class ham radio operator
+
 <!-- - **Problem solving**
   - 
   - Participated in multiple local and global programming competitions including the Advent of Code. In 2021 I placed 2nd in our local Advent of Code competition. In 2022, I improved to 1st place as well as 2 finishes in the global top 100. In 2023, I improved yet again, placing 1st locally and somehow managed to get on the global leaderboard 5 times! -->
