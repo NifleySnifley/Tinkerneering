@@ -9,6 +9,8 @@ description: A second BLDC motor controller design aiming to fix some of the iss
 image: bldc_v2/render_transparent.png
 links:
  - "[OnShape Document](https://cad.onshape.com/documents/66454a2c76b67f165972157e/w/2ecf8158066ea2686bd52c27/e/387c4969608941a8ec5404ff?renderMode=0&uiState=6950870ab189a2b25f07a95e)"
+redirect_from:
+ - /bldc
 ---
 
 ### Specifications & Design Targets:
