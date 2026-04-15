@@ -31,6 +31,11 @@ redirect_from:
 - [Rough switching calculations](https://www.desmos.com/calculator/n7nzazmwdy)
 - [Bulk capacitance/ripple calculations](https://www.desmos.com/calculator/aimarnhdmt)
 
+### Status
+Currently, all features of the motor controller hardware work as intended, but not all features have firmware support yet. I decided to implement the FOC commutation algorithm and all of the filtering and controllers from scratch rather than using existing firmware or libraries such as VESC or SimpleFOC as a learning experience. Currently the motor controller supports current control mode and has an internal velocity control loop, both running at 8kHz. The controller communicates over CAN to software on my laptop - a python interface can be used to send commands and "enable" heartbeats. I also created an interface between the motor controller's CAN messages and a Foxglove dashboard using rust for debugging and tuning the various filters and control loops.
+
+<iframe width="100%" height="512" src="https://www.youtube.com/embed/-HjTOWjTCKs" title="BLDC V2 Spin Testing" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ### Gallery
 
 {% include image.html file="bldc_v2/pcb_cad.png" astyle="width:65%" caption="PCB CAD Mmdel" %}
